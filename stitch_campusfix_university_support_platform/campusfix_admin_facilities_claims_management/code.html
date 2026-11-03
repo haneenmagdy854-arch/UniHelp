@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#30312d", "on-tertiary-fixed-variant": "#1d4f3e", "on-surface": "#1b1c19", "error-container": "#ffdad6", "on-secondary-container": "#795548", "on-tertiary-fixed": "#002116", "on-error-container": "#93000a", "on-primary": "#ffffff", "tertiary-fixed": "#b9eed6", "surface-tint": "#3d6754", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#9ed1bb", "secondary-container": "#fdcdbc", "inverse-primary": "#a4d0b9", "outline": "#717973", "on-secondary-fixed-variant": "#603f33", "secondary-fixed": "#ffdbcf", "outline-variant": "#c1c8c2", "error": "#ba1a1a", "inverse-on-surface": "#f2f1eb", "primary-fixed": "#bfedd5", "on-primary-fixed": "#002115", "on-secondary": "#ffffff", "tertiary-container": "#4c7d6a", "surface-bright": "#fbf9f3", "on-primary-fixed-variant": "#254e3d", "surface-container-low": "#f5f3ee", "surface-dim": "#dcdad4", "surface": "#fbf9f3", "primary": "#3a6350", "primary-fixed-dim": "#a4d0b9", "on-background": "#1b1c19", "tertiary": "#336452", "secondary": "#7a5649", "surface-container-highest": "#e4e2dd", "surface-container-high": "#eae8e2", "background": "#fbf9f3", "on-primary-container": "#edfff3", "secondary-fixed-dim": "#ebbcac", "on-error": "#ffffff", "on-tertiary-container": "#edfff4", "primary-container": "#527c68", "on-tertiary": "#ffffff", "surface-variant": "#e4e2dd", "surface-container": "#f0eee8", "on-secondary-fixed": "#2e150b", "on-surface-variant": "#414944" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "margin": "2rem", "gutter": "1.25rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter-tablet": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "margin-tablet": "1.5rem" }, "fontFamily": { "label-md": [ "Inter" ], "headline-lg-mobile": [ "Inter" ], "body-lg": [ "Inter" ], "display-lg": [ "Inter" ], "headline-md": [ "Inter" ], "headline-lg": [ "Inter" ], "body-sm": [ "Inter" ], "headline-sm": [ "Inter" ], "body-md": [ "Inter" ], "label-sm": [ "Inter" ], "label-lg": [ "Inter" ], "display-lg-mobile": [ "Inter" ] }, "fontSize": { "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "display-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md"><header class="fixed top-0 left-0 right-0 h-16 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(75,56,46,0.04)]"><div class="h-16 w-full px-space-md lg:px-space-xl flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-[240px]"><a class="flex items-center gap-space-sm" data-path="dashboard" href="#"><img alt="CampusFix Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyid1nxTCvD5ZbPiWtRrRPaHkWl4CX7ffbVBfgnukHN_UxXiYCmM9h1hKRHDoCOx50sfzcS17UMj4i7LdMUCXnOId7u-KFacDc4Wk9Ii0u6jeKZAuITOp9pMeIq3vdMsAYwwcG_tcAnapLb3WaJsafN9Q7eZ0Qez_1HzaotgjjGnty23z2VJSt43Q_CJCkEsfeCGESRg4R3pIiUUX5i97D_rIYth8ytx8X9rhGP8zv"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">CampusFix</span></a></div><div class="flex-1 max-w-xl hidden md:flex items-center"><div class="w-full flex items-center bg-surface-container-low px-space-md py-1.5 rounded-full shadow-[0_1px_3px_rgba(75,56,46,0.03)]"><span class="material-symbols-outlined text-outline text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent border-none text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/65 focus:outline-none" placeholder="Search reports, campus facilities &amp; lost items..." type="text"/></div></div><div class="flex items-center gap-space-md justify-end"><button class="hidden sm:inline-flex items-center justify-center px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button"><span>EN</span><span class="mx-1 text-outline-variant">|</span><span>عربي</span></button><a class="hidden sm:inline-flex items-center gap-1.5 px-space-md py-2 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-tertiary-container hover:text-on-tertiary-container shadow-[0_2px_6px_rgba(53,75,62,0.12)] transition-all active:scale-95" data-path="submit-issue" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>New Report</span></a><a class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="notifications" href="#" title="Notifications"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-on-secondary font-label-sm text-[10px]">3</span></a><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden xl:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Nour Al-Mansour</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-none">Engineering Hall</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzsdr8AR31Mqn_SpbpEz66QScm7EhbrKGAFEGPMv0mZ1gj-c29PcguJwLlkvylIAW4q7oANEwjBcZ-YxlrKcLdmEDL6gnOEUXeoitgWr9iZYwWTdDeDo7seQxjSMBwNvRdxgDcMfr0C-7yhWsv0MFDnfMgQmzVcSv5zPiL20oSLVy5De5skubvVTwTwHQYCP5eWgKlZjW9EwD6zY7AoxxvldayoUBP4lTzh6aPyu-6"/></div></div></div></header><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-20 pb-space-lg shadow-[0_2px_8px_-2px_rgba(75,56,46,0.05)]"><div class="px-space-md mb-space-md"><div class="flex items-center justify-between p-1 rounded-full bg-surface-container"><button class="flex-1 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-[0_1px_3px_0_rgba(75,56,46,0.03)] text-center" type="button">Student</button><button class="flex-1 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface text-center" type="button">Doctor</button><button class="flex-1 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface text-center" type="button">Admin</button></div></div><nav class="flex-1 px-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-xl shadow-[0_2px_8px_-2px_rgba(53,75,62,0.1)]"><a aria-current="page" class="flex items-center px-space-md py-2.5 transition-all gap-space-sm bg-primary-container text-on-primary-container font-label-md rounded-xl shadow-[0_2px_8px_-2px_rgba(53,75,62,0.1)]" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><div class="pt-space-sm pb-1 px-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Maintenance</div><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="my-reports" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span><span>My Reports</span></a><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="submit-issue" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Submit Issue</span></a><div class="pt-space-sm pb-1 px-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Lost &amp; Found</div><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="lost-items" href="#"><span class="material-symbols-outlined text-[20px]">search_check</span><span>Lost Items</span></a><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="found-items" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Found Items</span></a><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="claim-requests" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>Claim Requests</span></a><div class="pt-space-sm pb-1 px-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Updates</div><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="flex-1">Notifications</span><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[11px]">3</span></a></nav><div class="px-space-md pt-space-sm mt-auto"><div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1.5"><div class="flex items-center gap-2 text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">emergency</span><span>Emergency Hotline</span></div><p class="font-label-sm text-label-sm text-on-surface-variant">Ext: <strong>4444</strong> (Campus Ops)</p><a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center gap-1 mt-1" data-path="help-center" href="#"><span>Help &amp; Protocol Center</span><span class="material-symbols-outlined text-[14px]">arrow_forward</span></a></div></div></aside><div class="pl-64"><main class="relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full px-space-md lg:px-space-xl py-space-md space-y-space-lg">
+<!-- RTL Bilingual Banner Strip -->
+<div class="w-full bg-surface-container rounded-xl p-3 shadow-sm flex flex-col md:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<span class="p-1 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+</span>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-md text-label-md text-on-surface">Bilingual Operations Active:</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">واجهة المشرف والتحكم باللغة العربية متوافقة بالكامل مع نمط القراءة من اليمين لليسار (RTL Grid Ready)</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-sm hover:bg-surface-bright transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">swap_horiz</span>
+<span>تبديل للعربية (Preview RTL)</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">Cairo Core v4.2</span>
+</div>
+</div>
+<!-- Admin Top Bar & Header Section -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Ops Command Core
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Academic Year 2024–2025</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Facilities &amp; Campus Services Management Console</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Central Administration • Real-Time Campus Infrastructure Oversight &amp; Audit Logs</p>
+</div>
+<!-- Action & Filter Bar -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Department Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md pl-3 pr-8 py-2.5 rounded-xl cursor-pointer focus:outline-none focus:bg-surface-container shadow-sm">
+<option>All Departments (Unified)</option>
+<option>College of Engineering</option>
+<option>Faculty of Health Sciences</option>
+<option>Faculty of Fine Arts</option>
+<option>Central Facilities &amp; Grounds</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-3 text-[16px] pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<!-- Date Range Filter -->
+<button class="inline-flex items-center gap-2 px-3 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_month</span>
+<span>Last 30 Days: Oct 15 – Nov 14</span>
+<span class="material-symbols-outlined text-[14px] text-outline">tune</span>
+</button>
+<!-- Broadcast Trigger Button -->
+<button class="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-xl bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md hover:bg-secondary-container shadow-sm transition-all" onclick="document.getElementById('broadcast-toast').classList.toggle('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span>Broadcast Notice</span>
+</button>
+<!-- Export Dropdown -->
+<div class="relative group">
+<button class="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-primary transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Reports</span>
+<span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+<div class="absolute right-0 mt-1 w-44 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 hidden group-hover:block z-30">
+<a class="px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-secondary">description</span>
+              Download CSV Matrix
+            </a>
+<a class="px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px] text-error">picture_as_pdf</span>
+              Download PDF Summary
+            </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Broadcast Alert Notification Drawer (Toggled) -->
+<div class="hidden w-full bg-secondary-container text-on-secondary-container p-4 rounded-xl shadow-md flex items-center justify-between gap-4" id="broadcast-toast">
+<div class="flex items-center gap-3">
+<span class="p-2 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+</span>
+<div>
+<span class="font-headline-sm text-headline-sm block">System Alert Broadcast Mode Active</span>
+<span class="font-body-sm text-body-sm opacity-90">Sending urgent notifications to 2,410 active student &amp; faculty devices on campus Wi-Fi network.</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm" type="button">Compose Message</button>
+<button class="p-1 rounded-lg hover:bg-surface-container-lowest/40 text-on-secondary-container" onclick="document.getElementById('broadcast-toast').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Executive KPI Summary Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- KPI 1: Open Maintenance Tickets -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="p-2 rounded-xl bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">build_circle</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +8% WoW
+          </span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Open Work Orders</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">28</span>
+<span class="font-label-sm text-label-sm text-outline">tickets pending</span>
+</div>
+</div>
+<div class="mt-3 pt-3 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low px-2 py-1.5 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-error"></span> 14 High
+          <span class="text-outline-variant">•</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 8 Med
+          <span class="text-outline-variant">•</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span> 6 Low
+        </div>
+</div>
+<!-- KPI 2: Mean Time to Resolution (MTTR) -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="p-2 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+            -18% MTTR
+          </span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Avg Resolution Time</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-display-lg text-display-lg text-tertiary leading-none">3.4</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">Hours</span>
+</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Target SLA: &lt; 5.0h</span>
+<span class="text-primary font-bold">SLA Met (96%)</span>
+</div>
+</div>
+<!-- KPI 3: Lost & Found Items -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="p-2 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+            This Month
+          </span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Lost &amp; Found Log</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-display-lg text-display-lg text-on-surface leading-none">142</span>
+<span class="font-label-sm text-label-sm text-outline">items logged</span>
+</div>
+</div>
+<div class="mt-3 pt-3 flex items-center gap-2">
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 78%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">78% Reunited</span>
+</div>
+</div>
+<!-- KPI 4: Pending Claim Reviews (Alert Badge) -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="p-2 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm animate-pulse flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">priority_high</span>
+            Action Req.
+          </span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Pending Claims</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-display-lg text-display-lg text-secondary leading-none">7</span>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant">ID checks</span>
+</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between bg-surface-container-low px-2 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Owner verification</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Review Now</span>
+</div>
+</div>
+<!-- KPI 5: Active Field Technicians -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-2">
+<span class="p-2 rounded-xl bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Live Fleet
+          </span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Technicians Active</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-display-lg text-display-lg text-primary leading-none">16</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Online</span>
+</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Campus Coverage</span>
+<span class="text-on-surface font-semibold">4 / 4 Zones</span>
+</div>
+</div>
+</div>
+<!-- Analytics & Workload Distribution Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Category Workload Breakdown -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Issue Category Breakdown</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Live tickets classified by campus maintenance domain</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">
+              Seasonal HVAC Surge
+            </span>
+</div>
+<!-- Custom Distribution Bar Visual -->
+<div class="w-full h-7 rounded-xl overflow-hidden flex shadow-inner mb-space-md">
+<div class="bg-primary flex items-center justify-center text-on-primary font-label-sm text-label-sm" style="width: 34%" title="Air Conditioning: 34%">34%</div>
+<div class="bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-label-sm text-label-sm" style="width: 24%" title="Internet &amp; Wi-Fi: 24%">24%</div>
+<div class="bg-secondary flex items-center justify-center text-on-secondary font-label-sm text-label-sm" style="width: 18%" title="Electricity: 18%">18%</div>
+<div class="bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed-variant font-label-sm text-label-sm" style="width: 14%" title="Lab &amp; AV: 14%">14%</div>
+<div class="bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-sm text-label-sm" style="width: 10%" title="Sanitation: 10%">10%</div>
+</div>
+<!-- Detailed Legend List -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface">HVAC &amp; AC</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">34%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">48 open</span>
+</div>
+<span class="font-label-sm text-label-sm text-error mt-0.5">Peak Semester Surge</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="font-label-md text-label-md text-on-surface">Internet &amp; Wi-Fi</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">24%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">34 open</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary mt-0.5">Dorm Quad Priority</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface">Electricity &amp; Lights</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">18%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">25 open</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Normal baseline</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-3 h-3 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-md text-label-md text-on-surface">Lab &amp; Audio/Visual</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">14%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">20 open</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Smart Lecture Halls</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+<span class="font-label-md text-label-md text-on-surface">Sanitation &amp; Hygiene</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">10%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">14 open</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary mt-0.5">Fast clearance (&lt;1h)</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-[20px] text-primary">analytics</span>
+<span class="font-label-md text-label-md text-on-surface mt-1">Total Active Demand</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">141 Total Reports</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Automated dispatch rules applied based on technician location ping.</span>
+<a class="text-primary hover:underline font-semibold flex items-center gap-1" href="#">Configure Rules <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- Campus Zone Efficiency Gauge & Dispatch -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">Zone Resolution Efficiency</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Performance metrics across physical quadrants</span>
+</div>
+<span class="p-1.5 rounded-xl bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</span>
+</div>
+<!-- Zone 1 -->
+<div class="space-y-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">North Campus Complex</span>
+<span class="px-2 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px]">6 Techs</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">94% Target SLA</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<!-- Zone 2 -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Science &amp; Lab Quad</span>
+<span class="px-2 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px]">4 Techs</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary-container font-bold">88% Target SLA</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5">
+<div class="bg-tertiary-container h-2.5 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Zone 3 -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Student Residences &amp; Dorms</span>
+<span class="px-2 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px]">4 Techs</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">91% Target SLA</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<!-- Zone 4 -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Athletics &amp; Performing Arts</span>
+<span class="px-2 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-[10px]">2 Techs</span>
+</div>
+<span class="font-label-md text-label-md text-secondary font-bold">82% Target SLA</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5">
+<div class="bg-secondary h-2.5 rounded-full" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Campus Zone Micro-Banner -->
+<div class="mt-4 p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">electric_bolt</span>
+<span class="font-body-sm text-body-sm text-on-surface">Campus Electrical Peak Load: <strong>Normal</strong></span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Grid Stable</span>
+</div>
+</div>
+</div>
+<!-- Operational Worklist Table with Rich Filters & Interactive Actions -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden">
+<!-- Worklist Header and Nav Tabs -->
+<div class="p-space-lg pb-0 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 p-1 bg-surface-container rounded-xl w-fit">
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm" type="button">
+            Maintenance Work Orders (28)
+          </button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span>Pending Claim Reviews</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px]">7 Action</span>
+</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" type="button">
+            User Directory (1,420)
+          </button>
+</div>
+<div class="flex items-center gap-2">
+<!-- Quick Search Filter in Table -->
+<div class="flex items-center bg-surface-container-low px-3 py-1.5 rounded-xl">
+<span class="material-symbols-outlined text-outline text-[16px] mr-2">filter_alt</span>
+<input class="bg-transparent border-none font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none w-56" placeholder="Filter orders by ID, room, or tech..." type="text"/>
+</div>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant" title="Refresh Table" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Main Operational Table -->
+<div class="overflow-x-auto mt-4">
+<table class="w-full text-left">
+<thead class="bg-surface-container font-label-sm text-label-sm text-on-surface uppercase tracking-wider">
+<tr>
+<th class="py-3 px-space-md">Ticket ID &amp; Date</th>
+<th class="py-3 px-space-md">Issue &amp; Category</th>
+<th class="py-3 px-space-md">Location</th>
+<th class="py-3 px-space-md">Reporter Role</th>
+<th class="py-3 px-space-md">Technician</th>
+<th class="py-3 px-space-md">Status</th>
+<th class="py-3 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-body-sm">
+<!-- Row 1: High Priority AC -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#TCK-8821</span>
+<span class="text-outline text-label-sm">Today, 09:14 AM</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Main Compressor Unit Overheating</span>
+<span class="text-on-surface-variant text-label-sm">HVAC &amp; Climate Control</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Eng Hall B, Fl 3, Lab 302</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">
+                  Dr. K. Al-Sabah (Doctor)
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<select class="text-label-sm font-label-sm bg-surface-container-low px-2 py-1 rounded-lg text-on-surface focus:outline-none">
+<option selected="">Tariq Mansoor (Online)</option>
+<option>Majid Al-Ghamdi</option>
+<option>Yousef Saleh</option>
+</select>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  In Progress
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface" title="Review Details" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container" title="Mark Resolved" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="p-1.5 rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-on-error" title="Escalate Priority" type="button">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Wi-Fi Access Point Issue -->
+<tr class="bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#TCK-8819</span>
+<span class="text-outline text-label-sm">Today, 08:30 AM</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Cisco AP Beacon Offline</span>
+<span class="text-on-surface-variant text-label-sm">Internet &amp; Campus Wi-Fi</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Health Sci, Fl 1, Lecture 104</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                  Rayan F. (Student)
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<select class="text-label-sm font-label-sm bg-surface-container-low px-2 py-1 rounded-lg text-on-surface focus:outline-none">
+<option selected="">Majid Al-Ghamdi (Network)</option>
+<option>Tariq Mansoor</option>
+<option>Yousef Saleh</option>
+</select>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Pending Dispatch
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface" title="Review Details" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container" title="Mark Resolved" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high" title="Escalate Priority" type="button">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Lab Equipment / Projector -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#TCK-8815</span>
+<span class="text-outline text-label-sm">Yesterday, 04:45 PM</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Laser Projector Bulb Replacement</span>
+<span class="text-on-surface-variant text-label-sm">Lab &amp; Audio/Visual</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Fine Arts Aud, Hall C</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+                  Salma N. (Staff Admin)
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<select class="text-label-sm font-label-sm bg-surface-container-low px-2 py-1 rounded-lg text-on-surface focus:outline-none">
+<option selected="">Yousef Saleh (AV Lead)</option>
+<option>Tariq Mansoor</option>
+<option>Majid Al-Ghamdi</option>
+</select>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Awaiting Parts
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface" title="Review Details" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container" title="Mark Resolved" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high" title="Escalate Priority" type="button">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Lighting & Fixtures -->
+<tr class="bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">#TCK-8809</span>
+<span class="text-outline text-label-sm">Yesterday, 02:10 PM</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Emergency Exit Sign Flicker</span>
+<span class="text-on-surface-variant text-label-sm">Electricity &amp; Safety</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Library Annex, Stairwell 2</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                  Omar H. (Student)
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<select class="text-label-sm font-label-sm bg-surface-container-low px-2 py-1 rounded-lg text-on-surface focus:outline-none">
+<option selected="">Khalid Al-Dosari</option>
+<option>Tariq Mansoor</option>
+</select>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Resolved
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface" title="Review Details" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container text-on-surface-variant" title="Archived" type="button">
+<span class="material-symbols-outlined text-[16px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Table Footer -->
+<div class="p-space-md flex flex-col sm:flex-row items-center justify-between gap-3 bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 4 of 28 Active Orders</span>
+<div class="flex items-center gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm disabled:opacity-50" type="button">Previous</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm" type="button">1</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm" type="button">2</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm" type="button">3</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- Quick Action Drawer & Claim Review Dialog Card -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Interactive Claim Verification Box -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block">High-Priority Claim Verification Drawer</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lost &amp; Found Item Match ID Verification Process</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+            Action Queue: Item #LF-9921
+          </span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row gap-space-md">
+<!-- Item Thumbnail / Found Proof -->
+<div class="w-full md:w-44 h-36 rounded-xl overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of a space gray iPad Air tablet with a matte blue protective folio cover found resting on a blonde oak campus library study desk, natural university window daylight, gentle soft shadows, clean academic photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqDvpvyxmTL9Tpr6HSvs6Wwoy-yMGSXgF9FkmFruwAD9HarAzUn1XJBSnR9SpRl-MB-mH3_t8cGvKrX79JpEfq8ZSl1RoJNTZ6MyvmAIT5CXmcMKCAspAMJulIb3BirEwqLRUoeLEtHSvLp5NuBrmg3OaSGCKkObIej8K_0kDww3tos2OfnvEq79k6xtY-JIOn9yuNLoj6OasS1XfKaUfri-1StI7hniKnX6pJvN6M"/>
+</div>
+<div class="flex-1 space-y-2">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Apple iPad Air (5th Gen, Space Gray)</span>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded-full font-semibold">Matched Serial Hash</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Found by Cleaning Staff in <strong>Main Library, Level 2 Quiet Study Pod</strong>. Claimant provided valid unlock passcode and serial number matching University device registry.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 font-label-sm text-label-sm">
+<div class="bg-surface-container-lowest p-2 rounded-lg">
+<span class="text-outline block">Claimant Student:</span>
+<span class="text-on-surface font-semibold">Nour Al-Mansour (ID: #920412)</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg">
+<span class="text-outline block">Department / Program:</span>
+<span class="text-on-surface font-semibold">Computer Systems Engineering</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Verification Notes and Controls -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block">Admin Verification &amp; Identity Audit Note</label>
+<input class="w-full bg-surface-container-low px-3 py-2 rounded-xl text-body-sm font-body-sm text-on-surface focus:outline-none focus:bg-surface-container" type="text" value="Student ID checked in person by Desk Officer; passcode test validated on unit screen."/>
+</div>
+<div class="flex items-center justify-end gap-3 pt-2">
+<button class="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+            Request Additional Proof
+          </button>
+<button class="px-4 py-2.5 rounded-xl bg-error-container text-on-error-container font-label-md text-label-md hover:bg-error hover:text-on-error transition-colors" type="button">
+            Reject Claim
+          </button>
+<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-sm flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Approve &amp; Log Release</span>
+</button>
+</div>
+</div>
+<!-- Live Technician Dispatch Status Sidebar Panel -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-headline-sm text-headline-sm text-on-surface block">Field Technicians</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">16 Online</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mb-4">Direct dispatch channel across campus quadrants</span>
+<!-- Technicians List -->
+<div class="space-y-3">
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait photo of a friendly male Middle Eastern facilities maintenance engineer wearing a clean sage-green polo uniform with an ID badge on campus, realistic high-res portrait photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_51xEqLkXjI8W_hZhlmdQuJOZqMbOxNZ7OTfhd8zVGKgTs4a_9TM_R_kShaY6ReltRcc9A0QIB7BnHe-IhSSCx98iFOhtWlU_gcLp61yU1Igu2kCjrmSdcSwF7MeGfwlQAZ2ziTlUu66gZMhrefKKgnAtETKD05uSaW6LIscanTG20UJ7fn-Gtl71K7uQNStRHs3syd7UHXEcWwORxZ6LO3gOUfdMsZUIjW90kSQp"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block leading-tight">Tariq Mansoor</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">HVAC Lead • Eng Zone</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px]">Occupied</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait photo of a professional female network hardware technician with glasses wearing navy uniform with tools lanyard, soft university laboratory background lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw9vyy4b7MOFadoa7V5r2N_9TKQJiy_fT-ztED52IWF2Bfp8_WHEX3YL_ENC_ZyqzDneFzLRVQin3wmvwjECuJJ1obUmDyIidTaskbI_zwGqBC9F-1lVWJDDIfRTrOSHHSNd61cWvmaVYqQOqbP-caS-4defOtii1SxC7sATkfozvFXkIseebN5F9N6TCJnnDhBLFJuxFJXp9mCqQG8opIBP0CxPWHRXncpQcE3tjG"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block leading-tight">Laila Al-Sharif</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">IT &amp; Telephony • Quad</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[11px]">Available</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait photo of an experienced electrical engineer in work vest holding a digital multimeter on university campus hallway." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkZ_-xH3mn6th1xibefFfTQRqWTCLiSgXxB1AZBHkazhGsYIdD4NUZ7QFe0yXZJnMDR3t_rIgBVBs9SWskfVjH7weWfGDIZ8XOaAe_9p8dHoXN8TIZpqvSOdBL8zTFSW6NY7jgUtSAcSEnJZdQgWZQ4Ed2zmPfkKLj8Q5hOBXOd6VqUtQx5zXeurnDnXE91Ax4cnRwi94OEK3Sz8c-fIwQ2U-EnnKPlgARq2HHr7d1"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block leading-tight">Yousef Saleh</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Audio/Visual • Arts</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[11px]">En Route</span>
+</div>
+</div>
+</div>
+<!-- Direct Dispatch Radio Ping -->
+<div class="mt-4 pt-4 bg-surface-container p-3 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">sensors</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Campus Radio Net: Ch 4</span>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm hover:bg-surface-bright shadow-sm" type="button">
+            Ping Fleet
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

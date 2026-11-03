@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#30312d", "on-tertiary-fixed-variant": "#1d4f3e", "on-surface": "#1b1c19", "error-container": "#ffdad6", "on-secondary-container": "#795548", "on-tertiary-fixed": "#002116", "on-error-container": "#93000a", "on-primary": "#ffffff", "tertiary-fixed": "#b9eed6", "surface-tint": "#3d6754", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#9ed1bb", "secondary-container": "#fdcdbc", "inverse-primary": "#a4d0b9", "outline": "#717973", "on-secondary-fixed-variant": "#603f33", "secondary-fixed": "#ffdbcf", "outline-variant": "#c1c8c2", "error": "#ba1a1a", "inverse-on-surface": "#f2f1eb", "primary-fixed": "#bfedd5", "on-primary-fixed": "#002115", "on-secondary": "#ffffff", "tertiary-container": "#4c7d6a", "surface-bright": "#fbf9f3", "on-primary-fixed-variant": "#254e3d", "surface-container-low": "#f5f3ee", "surface-dim": "#dcdad4", "surface": "#fbf9f3", "primary": "#3a6350", "primary-fixed-dim": "#a4d0b9", "on-background": "#1b1c19", "tertiary": "#336452", "secondary": "#7a5649", "surface-container-highest": "#e4e2dd", "surface-container-high": "#eae8e2", "background": "#fbf9f3", "on-primary-container": "#edfff3", "secondary-fixed-dim": "#ebbcac", "on-error": "#ffffff", "on-tertiary-container": "#edfff4", "primary-container": "#527c68", "on-tertiary": "#ffffff", "surface-variant": "#e4e2dd", "surface-container": "#f0eee8", "on-secondary-fixed": "#2e150b", "on-surface-variant": "#414944" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "margin": "2rem", "gutter": "1.25rem", "space-xl": "2.5rem", "space-md": "1rem", "gutter-tablet": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "margin-tablet": "1.5rem" }, "fontFamily": { "label-md": [ "Inter" ], "headline-lg-mobile": [ "Inter" ], "body-lg": [ "Inter" ], "display-lg": [ "Inter" ], "headline-md": [ "Inter" ], "headline-lg": [ "Inter" ], "body-sm": [ "Inter" ], "headline-sm": [ "Inter" ], "body-md": [ "Inter" ], "label-sm": [ "Inter" ], "label-lg": [ "Inter" ], "display-lg-mobile": [ "Inter" ] }, "fontSize": { "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "display-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md"><header class="fixed top-0 left-0 right-0 h-16 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(75,56,46,0.04)]"><div class="h-16 w-full px-space-md lg:px-space-xl flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-[240px]"><a class="flex items-center gap-space-sm" data-path="dashboard" href="#"><img alt="CampusFix Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyid1nxTCvD5ZbPiWtRrRPaHkWl4CX7ffbVBfgnukHN_UxXiYCmM9h1hKRHDoCOx50sfzcS17UMj4i7LdMUCXnOId7u-KFacDc4Wk9Ii0u6jeKZAuITOp9pMeIq3vdMsAYwwcG_tcAnapLb3WaJsafN9Q7eZ0Qez_1HzaotgjjGnty23z2VJSt43Q_CJCkEsfeCGESRg4R3pIiUUX5i97D_rIYth8ytx8X9rhGP8zv"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">CampusFix</span></a></div><div class="flex-1 max-w-xl hidden md:flex items-center"><div class="w-full flex items-center bg-surface-container-low px-space-md py-1.5 rounded-full shadow-[0_1px_3px_rgba(75,56,46,0.03)]"><span class="material-symbols-outlined text-outline text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent border-none text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/65 focus:outline-none" placeholder="Search reports, campus facilities &amp; lost items..." type="text"/></div></div><div class="flex items-center gap-space-md justify-end"><button class="hidden sm:inline-flex items-center justify-center px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button"><span>EN</span><span class="mx-1 text-outline-variant">|</span><span>عربي</span></button><a class="hidden sm:inline-flex items-center gap-1.5 px-space-md py-2 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md hover:bg-tertiary-container hover:text-on-tertiary-container shadow-[0_2px_6px_rgba(53,75,62,0.12)] transition-all active:scale-95" data-path="submit-issue" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>New Report</span></a><a class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="notifications" href="#" title="Notifications"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-on-secondary font-label-sm text-[10px]">3</span></a><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden xl:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Nour Al-Mansour</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-none">Engineering Hall</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzsdr8AR31Mqn_SpbpEz66QScm7EhbrKGAFEGPMv0mZ1gj-c29PcguJwLlkvylIAW4q7oANEwjBcZ-YxlrKcLdmEDL6gnOEUXeoitgWr9iZYwWTdDeDo7seQxjSMBwNvRdxgDcMfr0C-7yhWsv0MFDnfMgQmzVcSv5zPiL20oSLVy5De5skubvVTwTwHQYCP5eWgKlZjW9EwD6zY7AoxxvldayoUBP4lTzh6aPyu-6"/></div></div></div></header><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-20 pb-space-lg shadow-[0_2px_8px_-2px_rgba(75,56,46,0.05)]"><div class="px-space-md mb-space-md"><div class="flex items-center justify-between p-1 rounded-full bg-surface-container"><button class="flex-1 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-[0_1px_3px_0_rgba(75,56,46,0.03)] text-center" type="button">Student</button><button class="flex-1 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface text-center" type="button">Doctor</button><button class="flex-1 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface text-center" type="button">Admin</button></div></div><nav class="flex-1 px-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-label-md rounded-xl shadow-[0_2px_8px_-2px_rgba(53,75,62,0.1)]"><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><div class="pt-space-sm pb-1 px-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Maintenance</div><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="my-reports" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span><span>My Reports</span></a><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="submit-issue" href="#"><span class="material-symbols-outlined text-[20px]">report_problem</span><span>Submit Issue</span></a><div class="pt-space-sm pb-1 px-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Lost &amp; Found</div><a aria-current="page" class="flex items-center px-space-md py-2.5 transition-all gap-space-sm bg-primary-container text-on-primary-container font-label-md rounded-xl shadow-[0_2px_8px_-2px_rgba(53,75,62,0.1)]" data-path="lost-items" href="#"><span class="material-symbols-outlined text-[20px]">search_check</span><span>Lost Items</span></a><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="found-items" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Found Items</span></a><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="claim-requests" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>Claim Requests</span></a><div class="pt-space-sm pb-1 px-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Updates</div><a class="flex items-center px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all gap-space-sm" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="flex-1">Notifications</span><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[11px]">3</span></a></nav><div class="px-space-md pt-space-sm mt-auto"><div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1.5"><div class="flex items-center gap-2 text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">emergency</span><span>Emergency Hotline</span></div><p class="font-label-sm text-label-sm text-on-surface-variant">Ext: <strong>4444</strong> (Campus Ops)</p><a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center gap-1 mt-1" data-path="help-center" href="#"><span>Help &amp; Protocol Center</span><span class="material-symbols-outlined text-[14px]">arrow_forward</span></a></div></div></aside><div class="pl-64"><main class="relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Background Ambient Glow Layer -->
+<div class="relative w-full px-space-md lg:px-space-xl py-space-lg max-w-7xl mx-auto flex flex-col gap-space-lg">
+<!-- Hero / Title & Stats Bar -->
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-low p-space-lg lg:p-space-xl shadow-sm">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary-fixed/25 blur-3xl pointer-events-none"></div>
+<div class="absolute right-48 -bottom-20 w-64 h-64 rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="max-w-2xl space-y-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm tracking-wide">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            CAMPUS OPERATIONS &amp; SAFETY DESK
+          </div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Campus Lost &amp; Found Central Registry</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Report, locate, and safely reclaim items across all campus buildings, libraries, and facilities with verified ownership protocols.
+          </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm sm:shrink-0">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container-highest text-secondary font-label-md text-label-md hover:bg-surface-container shadow-sm active:scale-95 transition-all" onclick="openClaimModal('General Lost Report')" type="button">
+<span class="material-symbols-outlined text-[20px]">search_off</span>
+<span>+ Report Lost Item</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-tertiary-container shadow-sm active:scale-95 transition-all" onclick="openClaimModal('Found Item Submission')" type="button">
+<span class="material-symbols-outlined text-[20px]">inventory</span>
+<span>+ Report Found Item</span>
+</button>
+</div>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="mt-space-lg pt-space-md grid grid-cols-2 sm:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-2xl p-space-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Total Tracked</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">48</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">This semester</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-2xl p-space-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Found Items</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">29</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">In holding desks</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-2xl p-space-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Reported Missing</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">19</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unmatched</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-2xl p-space-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Return Rate</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-tertiary">84.2%</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Avg &lt; 48 hrs</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Segmented Filter Bar & Search Container -->
+<div class="flex flex-col gap-space-md bg-surface-container-low p-space-md lg:p-space-lg rounded-2xl shadow-sm">
+<!-- Top Row: Tabs -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="inline-flex p-1 rounded-full bg-surface-container">
+<button class="tab-btn px-space-md py-1.5 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+            All Items (48)
+          </button>
+<button class="tab-btn px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">
+            Lost Items (19)
+          </button>
+<button class="tab-btn px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" type="button">
+            Found Items (29)
+          </button>
+<button class="tab-btn px-space-md py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md inline-flex items-center gap-1.5 transition-all" type="button">
+<span>My Claim Requests</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px]">2 Active</span>
+</button>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span>Verified Student &amp; Faculty Authentication Required for Retrieval</span>
+</div>
+</div>
+<!-- Search Input -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-space-md flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md pl-12 pr-space-xl py-3.5 rounded-xl shadow-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="Search by keyword (e.g. iPad, AirPods, HydroFlask, student card, brown wallet, locker keys)..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-space-md flex items-center">
+<kbd class="hidden sm:inline-block px-2 py-0.5 text-[11px] font-label-sm text-outline-variant bg-surface-container rounded">ESC to clear</kbd>
+</div>
+</div>
+<!-- Advanced Filter Dropdowns -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-xs">
+<!-- Category -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Category</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2.5 px-space-md pr-8 rounded-xl shadow-sm focus:outline-none cursor-pointer">
+<option>All Categories</option>
+<option>Electronics &amp; Gadgets</option>
+<option>IDs, Badges &amp; Wallets</option>
+<option>Books, Notes &amp; Binders</option>
+<option>Personal Accessories &amp; Watches</option>
+<option>Keys &amp; FOBs</option>
+<option>Bags &amp; Backpacks</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Location -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Building Location</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2.5 px-space-md pr-8 rounded-xl shadow-sm focus:outline-none cursor-pointer">
+<option>All Locations</option>
+<option>Main University Library</option>
+<option>Engineering Hall &amp; Labs</option>
+<option>Student Union &amp; Dining Hall</option>
+<option>Sports Complex &amp; Arena</option>
+<option>Dormitories &amp; Quad</option>
+<option>Medical Health Clinic</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Date Range -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Date Range</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2.5 px-space-md pr-8 rounded-xl shadow-sm focus:outline-none cursor-pointer">
+<option>Any Time</option>
+<option>Past 24 Hours</option>
+<option>Past 7 Days</option>
+<option>Past 30 Days</option>
+<option>Current Term</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Status -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Status</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest text-on-surface font-label-md text-label-md py-2.5 px-space-md pr-8 rounded-xl shadow-sm focus:outline-none cursor-pointer">
+<option>All Statuses</option>
+<option>Available for Claim</option>
+<option>Claim Pending Review</option>
+<option>Returned to Owner</option>
+<option>Reported Missing</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Filter Chips Bar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-1">Active filters:</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span>Location: All Campus</span>
+<button class="hover:text-error inline-flex items-center" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span>Electronics &amp; Cards</span>
+<button class="hover:text-error inline-flex items-center" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline ml-auto" type="button">Clear all filters</button>
+</div>
+<!-- Item Catalog Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- CARD 1: FOUND (Ready to claim) -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all duration-200 group">
+<div class="relative w-full h-48 rounded-xl overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern Apple iPad Air in a dark charcoal magnetic folio case placed on a polished university library study carrel desk with soft ambient warm lighting, student textbooks, and university architecture visible in the softly blurred background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWyoiVTnfukE5ikW1hE3RhQ2_oeXywGFGnIZxaiRP3iF4yq7NtKVif7C0H9v3EDY2y8EwdtwWSz7IndS2RaRTRZQHVe9e5v48L1kGCaSmLOs9UYyfdo-QANT03N-6zvSWzQGKy4A3wQYQL_n-aM3kf6h-ChAi7v-xhzu4attR9bIbh02whiERxPWIktiBT7ylefobf7TynOFbeRgubNPf2DFIVzYd-JEXMsx7V03Rg"/>
+<div class="absolute top-2.5 left-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>FOUND • Library 2nd Fl</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-[11px] shadow-sm">
+<span>Ref #LF-8841</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Available for Claim
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday, 3:15 PM</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">
+              Space Gray Apple iPad Air 5th Gen (Black Folio Case)
+            </h2>
+<div class="mt-space-sm space-y-1.5">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0">place</span>
+<span class="truncate">Study Pod B • Main Library</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0">lock</span>
+<span class="truncate">Campus Central Security Desk (Window 3)</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm">
+<button class="w-full py-2.5 px-space-md rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-tertiary-container shadow-sm active:scale-98 transition-all flex items-center justify-center gap-1.5" onclick="openClaimModal('Space Gray Apple iPad Air 5th Gen (Black Folio Case)')" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Submit Claim Request</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 2: CLAIM PENDING -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all duration-200 group">
+<div class="relative w-full h-48 rounded-xl overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A textured vintage brown leather bifold wallet lying on a clean engineering cafe wooden table with a university student campus cafeteria background, natural daylight streaming through large campus windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgM3jdxun8mWhXNXsRltJHNThjDRAYhjbgIWy2oIuY8SLxBMk-XU6hT0Ih6iGXALJoWgvAooDaIUGmt3b0pCcBoqP4btqRYZStJry41a8y2nZ5eJbKF93X5JJh9Ge2h5-moErJYw-gZk9VPOqrSJhMS_8xXvRfhecFFbIhlDOzFwXYBQ0vq4WASN7qz9K4JpXQ0O8iauwWFK7L0XNTvAdfvL0Xf6V1zDyNHLxFSIgl"/>
+<div class="absolute top-2.5 left-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>FOUND • Engineering Café</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-[11px] shadow-sm">
+<span>Ref #LF-8839</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span> Verification in Progress
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nov 12, 11:00 AM</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+              Brown Leather Fossil Wallet with Student ID
+            </h2>
+<div class="mt-space-sm space-y-1.5">
+<div class="p-space-sm rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface-variant flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">visibility_off</span>
+<span class="leading-relaxed">Confidential owner details &amp; card numbers hidden for student security.</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0">inventory_2</span>
+<span class="truncate">Engineering Faculty Office (Rm 104)</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm">
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md cursor-not-allowed flex items-center justify-center gap-1.5" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>Claim Pending Review</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 3: REPORTED LOST -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all duration-200 group">
+<div class="relative w-full h-48 rounded-xl overflow-hidden mb-space-md bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Matte silver wireless over-ear premium noise-canceling headphones resting next to a gym sports locker bench, metallic gym lockers background, sports facility atmosphere, high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8qFdlDhmW-SntDhWX4HyM-K_v7Rzubwwo9L6w7zvNaOvKuYuvTkrj6uuo0aG9LvB9PG1_iVshPLo-tKXOmkrnufg6xmSJbWR58zopXqABtf31CEhirQJAD4mhvQfZRViEaDk2xlrjQRZV5tsoVM_pQDeG0XnBDd8H4xtIfDsuUY0zCP7k6JGm5y7uTR9dfUQ_OcUwbSCTcNP_LGxQGrm_a6_EyUwDc1H0p041RCEr"/>
+<div class="absolute top-2.5 left-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>LOST • Sports Complex</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-[11px] shadow-sm">
+<span>Ticket #L-1904</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">flag</span> Active Search
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nov 10, Locker Area</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-2">
+              Sony WH-1000XM4 Wireless Headphones (Silver)
+            </h2>
+<div class="mt-space-sm space-y-1.5">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0">location_searching</span>
+<span class="truncate">Men's Locker Bay 3, Gym Lower Level</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">handshake</span>
+<span class="truncate">Reward offered for safe return</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm">
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container-highest text-secondary font-label-md text-label-md hover:bg-surface-container shadow-sm active:scale-98 transition-all flex items-center justify-center gap-1.5" onclick="notifyFound('Sony WH-1000XM4 Wireless Headphones')" type="button">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+<span>I Found This Item</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 4: RETURNED / RESOLVED -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-sm hover:shadow-md transition-all duration-200 group">
+<div class="relative w-full h-48 rounded-xl overflow-hidden mb-space-md bg-surface-container opacity-90">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="TI-84 plus graphing calculator alongside a spiral engineering notebook placed neatly on a reception desk in a clean campus healthcare medical clinic with reassuring soft sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1iVtpDV9vzZV284sKAHM7-eGPQ5AR9wK6bYT-pZmxZ2tKqMdjqhaDsOnmbEAmgsOU5uIT4B-h15p79jtz-SQ0CMb2TH1PxLP2ghikPQ2Lxs4G8PTV9AK4jwXhUKzEEQk2Vl9m2VRmRYLM32VFrW1klW1rmWvfMjmkStNU2KF4nlxuNkcB3GUqO9lJDbw370zF3-v3OAMvEYkzCSf3KeCyotjhpFcrTZ8GLlESqyGu"/>
+<div class="absolute top-2.5 left-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>RETURNED • Clinic Waiting Area</span>
+</div>
+<div class="absolute bottom-2.5 right-2.5 inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-[11px] shadow-sm">
+<span>Ref #LF-8791</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">task_alt</span> Case Resolved
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reclaimed Nov 09</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface line-clamp-2">
+              Graphing Calculator &amp; Spiral Bioengineering Notebook
+            </h2>
+<div class="mt-space-sm space-y-1.5">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0">domain</span>
+<span class="truncate">Health &amp; Wellness Center Reception</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0">verified</span>
+<span class="truncate">ID Verified &amp; Handed to Owner</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm">
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container-low text-outline font-label-md text-label-md cursor-default flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+<span>Archived Record</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Campus Storage Locations Info Panel -->
+<div class="rounded-2xl bg-surface-container p-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">shield_person</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Campus Custody Holding Protocol</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
+            All high-value items (laptops, phones, jewelry, wallets, official IDs) are transferred every evening at 6:00 PM to Central Campus Police &amp; Security Desk in the Administration Tower. Low-value stationery and clothing remain with local building reception desks for 14 calendar days.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 w-full sm:w-auto">
+<div class="px-space-md py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+<span>Central Desk: Mon-Fri 08:00 - 20:00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE-OVER / MODAL: SECURE CLAIM REQUEST -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 hidden transition-opacity duration-300" id="claimModal" role="dialog">
+<!-- Backdrop Scrim -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" onclick="closeClaimModal()"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+<div class="w-screen max-w-xl bg-surface-container-lowest shadow-2xl flex flex-col justify-between overflow-y-auto transform transition-transform duration-300 ease-in-out">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-lg bg-surface-container-low flex items-start justify-between">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">security</span>
+<span>Campus Security ID-Verify Protocol</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface" id="modal-title">Submit Secure Claim Request</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Target item: <strong class="text-on-surface font-label-md" id="modalItemTitle">Space Gray Apple iPad Air 5th Gen (Black Folio Case)</strong>
+</p>
+</div>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" onclick="closeClaimModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Modal Body Form -->
+<form class="p-space-lg flex-1 flex flex-col gap-space-lg" id="claimForm" onsubmit="handleClaimSubmit(event)">
+<!-- Fraud Prevention Security Notice -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex items-start gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0 mt-0.5">verified_user</span>
+<div class="font-body-sm text-body-sm text-on-surface-variant space-y-1">
+<strong class="font-label-md text-label-md text-on-surface block">Ownership Proof Guarantee</strong>
+<p>
+                To prevent unauthorized or fraudulent pickups, provide identifying marks not visible in public photos (e.g. lock screen wallpaper image, device serial number, custom engraving, interior case stickers, or matching unlock code format).
+              </p>
+</div>
+</div>
+<!-- Input 1: Private Identifying Features -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface">
+              Private Identifying Features / Description <span class="text-error">*</span>
+</label>
+<textarea class="w-full bg-surface text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md p-space-md rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none" placeholder="Describe confidential traits: Lock screen wallpaper (e.g., photo of golden retriever), specific serial number, stickers behind case, distinct scratch on bottom bezel, engraved initials, or content of notes app..." required="" rows="4"></textarea>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Visible only to verified Campus Security Administrators.</span>
+</div>
+<!-- Input 2: Proof of Ownership Upload -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface">
+              Proof of Ownership Documentation (Optional but Expedited)
+            </label>
+<div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary mb-2 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Click to upload receipt, Apple ID dashboard, or serial number screenshot</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">PNG, JPG, or PDF up to 10MB</span>
+</div>
+</div>
+<!-- Input 3: Preferred Reclaim Method -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface">
+              Preferred Reclaim Method <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<label class="flex items-start gap-3 p-space-md rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-1 text-primary focus:ring-primary" name="pickupMethod" type="radio" value="central"/>
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Central Security Desk</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Admin Tower, 1st Floor (Window 3)</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-space-md rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="mt-1 text-primary focus:ring-primary" name="pickupMethod" type="radio" value="department"/>
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Department Dean Pickup</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Engineering Student Affairs Lobby</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Student Contact Verification -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface">Campus Student ID &amp; Contact</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<input class="w-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md px-space-md py-2.5 rounded-xl cursor-not-allowed" readonly="" type="text" value="Nour Al-Mansour (ST-94821)"/>
+<input class="w-full bg-surface text-on-surface font-body-md text-body-md px-space-md py-2.5 rounded-xl shadow-sm focus:outline-none" placeholder="Alternative Phone (e.g. +1 555-0192)" type="text"/>
+</div>
+</div>
+<!-- Review timeline footnote -->
+<div class="pt-space-xs font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>All submissions are reviewed by Campus Security Administrators within 24 hours.</span>
+</div>
+<!-- Modal Action Buttons -->
+<div class="pt-space-md flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeClaimModal()" type="button">
+              Cancel
+            </button>
+<button class="px-space-lg py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-tertiary-container shadow-sm active:scale-95 transition-all inline-flex items-center gap-1.5" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Submit Claim for Verification</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<div class="flex items-center gap-3 px-space-lg py-3 rounded-2xl bg-inverse-surface text-inverse-on-surface shadow-xl">
+<span class="material-symbols-outlined text-[22px] text-tertiary-fixed">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Claim submitted successfully. Security will review within 24 hours.</span>
+</div>
+</div>
+</div>
+<script>
+  function openClaimModal(itemName) {
+    const modal = document.getElementById('claimModal');
+    const title = document.getElementById('modalItemTitle');
+    if (title && itemName) {
+      title.innerText = itemName;
+    }
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeClaimModal() {
+    const modal = document.getElementById('claimModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const msgEl = document.getElementById('toastMessage');
+    if (toast && msgEl) {
+      msgEl.innerText = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 4000);
+    }
+  }
+
+  function handleClaimSubmit(e) {
+    e.preventDefault();
+    closeClaimModal();
+    showToast('Secure claim registered. Ticket sent to Campus Security Desk.');
+  }
+
+  function notifyFound(itemTitle) {
+    showToast(`Match note registered for "${itemTitle}". Anonymous chat opened.`);
+  }
+
+  // Segmented switcher tabs active state
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      this.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      this.classList.remove('text-on-surface-variant');
+    });
+  });
+</script></main></div></body></html>
